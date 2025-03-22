@@ -1,0 +1,28 @@
+import { Button, VerticalBox, HorizontalBox, LineEdit, ListView, CheckBox } from "std-widgets.slint";
+
+struct TodoItem {
+    title: string,
+    checked: bool,
+}
+
+export component AppWindow inherits Window {
+    width: 400px;
+    height: 600px;
+
+    in-out property <[TodoItem]> todo_model: [];
+
+    callback add_item(string);
+
+    callback clear_all();
+
+    VerticalBox {
+        HorizontalBox {
+            // Step 1: Create a widget that allows the user to input text and give it an identifier
+            // Step 2: Create a button assign to it the add_item callback with the input field widget's text as input
+            // Dont forget to clear input field when entry add to list
+        }
+        // Step 3: Create a ListView where u can dispay items from the VecModel todo_model with a checkbox
+        // Additional: Try to make it so that the inserted text turns grey when checkbox is checked
+        // Step 4: Add a clear button for the list that uses the clear-all callback
+    }
+}
